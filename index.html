@@ -1,43 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animal-Donations</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/7b3b6f1d2f.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animal Donations</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/353171f722.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>Animal-Donations</h1>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="">Donations</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <button>Donate</button>
-            <button>Sign Up</button>
-            <button>Log In</button>
-        </nav>
-        <button type="button" id="menu-btn" class="action-btn"><i class="fas fa-menu"></i></button>
-
-    </header>
-    <main>
-        <section>
-            <h1>Animal-Donations</h1>
-            <p>Animal-Donations is a website that allows you to donate to animals in need. You can donate to animals in need by clicking the donate button below.</p>
-            <button>Donate</button>
-        </section>
-    </main>
-    <footer>
-
-    </footer>
-    <script src="script.js"></script>
-
+  <header>
+    <nav class="navbar">
+      <div class="brand">
+        <h1>Animal Donations</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Donations</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="extras">
+        <div class="search-bar" role="search">
+          <label for="search-input" class="sr-only">Search</label>
+          <input id="search-input" type="text" placeholder="Search">
+          <button aria-label="Search"><i class="fa-solid fa-search"></i></button>
+        </div>
+        <div class="btn-box">
+          <button type="button" class="action-btn primary" aria-label="Donate Now">Donate</button>
+          <!-- <button type="button" class="action-btn secondary" aria-label="Sign Up">Sign Up</button> -->
+          <!-- <button type="button" class="action-btn secondary" aria-label="Log In">Log In</button> -->
+        </div>
+      </div>
+      <button type="button" id="menu-btn" class="action-btn" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+  
+  <main>
+    <section class="hero">
+      <h1>Support Animals in Need</h1>
+      <p>
+        Join us in making a difference for animals in need. Click the button below to help us provide shelter, food, and medical care to our furry friends.
+      </p>
+      <button class="donate-btn" aria-label="Donate Now">Donate Now</button>
+    </section>
     
+    <section class="about">
+      <h2>About Us</h2>
+      <p>
+        Animal Donations is a non-profit organization committed to providing food, shelter, and medical care to abandoned and abused animals. Our goal is to give them a second chance and connect them with loving homes.
+      </p>
+    </section>
+    
+    <section class="services">
+      <h2>Our Services</h2>
+      <div class="service">
+        <i class="fa-solid fa-paw"></i>
+        <h3>Animal Shelter</h3>
+        <p>We offer a safe and nurturing environment for animals to recover and thrive.</p>
+      </div>
+      <div class="service">
+        <i class="fa-solid fa-heart"></i>
+        <h3>Medical Care</h3>
+        <p>Comprehensive medical care for injured and unwell animals is at the heart of our mission.</p>
+      </div>
+      <div class="service">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+        <h3>Adoption Services</h3>
+        <p>Our adoption process connects animals with families who can provide them a loving forever home.</p>
+      </div>
+    </section>
+    
+    <section class="donations">
+      <h2>Make a Donation</h2>
+      <p>Your generous contributions help us save lives and support animals in need. Every donation counts.</p>
+      <button class="donate-btn" aria-label="Donate Now">Donate Now</button>
+    </section>
+    
+    <section class="events">
+      <h2>Upcoming Events</h2>
+      <div class="event">
+        <img src="./assets/images/event1.png" alt="Adoption Event">
+        <h3>Adoption Event</h3>
+        <p>Join us this Saturday from 12 PM to 4 PM to meet our animals and find your new best friend.</p>
+      </div>
+      <div class="event">
+        <img src="./assets/images/event2.png" alt="Fundraising Gala">
+        <h3>Fundraising Gala</h3>
+        <p>Our annual gala is happening Friday, November 15th at 7 PM. Get your tickets today!</p>
+      </div>
+      <div class="event">
+        <img src="./assets/images/event3.png" alt="Volunteer Day">
+        <h3>Volunteer Day</h3>
+        <p>Join us on Sunday, November 17th from 10 AM to 2 PM to lend a helping hand to our animals.</p>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 Animal Donations. All rights reserved. | <a href="#">Privacy Policy</a></p>
+  </footer>
+  
+  <script src="script.js"></script>
 </body>
 </html>
