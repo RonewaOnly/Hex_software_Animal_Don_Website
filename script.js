@@ -53,48 +53,17 @@
     });
   });
 
-  // Dynamic Button Text Animation
-  const donateBtn = document.querySelector('.donate-btn');
-
-  donateBtn.addEventListener('mouseover', () => {
-    donateBtn.textContent = 'Click to Donate!';
-  });
-
-  donateBtn.addEventListener('mouseout', () => {
-    donateBtn.textContent = 'Donate Now';
-  });
-
-
-  function openDonationModal() {
-    document.getElementById('donation-modal').style.display = 'flex';
+  function toggleMenuIcon() {
+    var barIcon = document.getElementById('bar-icon');
+    var closeIcon = document.getElementById('close-icon');
+  
+    // Toggle between showing the bar icon and the close icon
+    if (barIcon.style.display === 'none') {
+      barIcon.style.display = 'inline';
+      closeIcon.style.display = 'none';
+    } else {
+      barIcon.style.display = 'none';
+      closeIcon.style.display = 'inline';
+    }
   }
-
-  function openVolunteerModal() {
-    document.getElementById('volunteer-modal').style.display = 'flex';
-  }
-
-  function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
-  }
-
-  function nextStep(currentStep, nextStep) {
-    document.getElementById(currentStep).style.display = 'none';
-    document.getElementById(nextStep).style.display = 'block';
-  }
-
-  // Slideshow
-  let currentSlideIndex = 0;
-  const slides = document.querySelectorAll('.slide');
-
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.style.display = i === index ? 'block' : 'none';
-    });
-  }
-
-  function changeSlide(direction) {
-    currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
-    showSlide(currentSlideIndex);
-  }
-
-  showSlide(currentSlideIndex);
+  

@@ -31,8 +31,9 @@
           <button type="button" class="action-btn primary" aria-label="Donate Now">Donate</button>
         </div>
       </div>
-      <button type="button" id="menu-btn" class="action-btn" aria-label="Menu">
-        <i class="fa-solid fa-bars"></i>
+      <button type="button" id="menu-btn" class="action-btn" aria-label="Menu" onclick="toggleMenuIcon()">
+        <i id="bar-icon" class="fa-solid fa-bars"></i>
+        <i id="close-icon" class="fa-solid fa-xmark" style="display: none;"></i>
       </button>
     </nav>
   </header>
@@ -43,7 +44,7 @@
       <p>
         Join us in making a difference for animals in need. Click the button below to help us provide shelter, food, and medical care to our furry friends.
       </p>
-      <button type="button" class="donate-btn" aria-label="Donate Now" onclick="openModal('donation-modal')">Donate Now</button>
+      <button type="button" class="donate-btn" aria-label="Donate Now" onclick="openDonationModal()">Donate Now</button>
     </section>
     
     <section id="about" class="about">
@@ -75,7 +76,7 @@
     <section id="donations" class="donations">
       <h2>Make a Donation</h2>
       <p>Your generous contributions help us save lives and support animals in need. Every donation counts.</p>
-      <button type="button" class="donate-btn" aria-label="Donate Now" onclick="openModal('donation-modal')">Donate Now</button>
+      <button type="button" class="donate-btn" aria-label="Donate Now" onclick="openDonationModal()">Donate Now</button>
     </section>
     
     <section id="events" class="events">
@@ -94,6 +95,7 @@
         <img src="./assets/images/event3.png" alt="Volunteer Day">
         <h3>Volunteer Day</h3>
         <p>Join us on Sunday, November 17th from 10 AM to 2 PM to lend a helping hand to our animals.</p>
+        <button type="button" class="action-btn donate-btn" aria-label="Sign Up" onclick="openVolunteerModal()">Sign Up</button>
       </div>
     </section>
   </main>
@@ -159,5 +161,52 @@
   </button>
 
   <script src="./script.js"></script>
+  <script>
+      // Dynamic Button Text Animation
+  const donateBtn = document.querySelector('.donate-btn');
+
+  donateBtn.addEventListener('mouseover', () => {
+    donateBtn.textContent = 'Click to Donate!';
+  });
+
+  donateBtn.addEventListener('mouseout', () => {
+    donateBtn.textContent = 'Donate Now';
+  });
+
+
+  function openDonationModal() {
+    document.getElementById('donation-modal').style.display = 'flex';
+  }
+
+  function openVolunteerModal() {
+    document.getElementById('volunteer-modal').style.display = 'flex';
+  }
+
+  function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+  }
+
+  function nextStep(currentStep, nextStep) {
+    document.getElementById(currentStep).style.display = 'none';
+    document.getElementById(nextStep).style.display = 'block';
+  }
+
+  // Slideshow
+  let currentSlideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? 'block' : 'none';
+    });
+  }
+
+  function changeSlide(direction) {
+    currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+    showSlide(currentSlideIndex);
+  }
+
+  showSlide(currentSlideIndex);
+  </script>
 </body>
 </html>
