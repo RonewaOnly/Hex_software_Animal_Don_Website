@@ -15,22 +15,20 @@
       </div>
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Donations</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#donations">Donations</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="extras">
         <div class="search-bar" role="search">
           <label for="search-input" class="sr-only">Search</label>
           <input id="search-input" type="text" placeholder="Search">
-          <button aria-label="Search"><i class="fa-solid fa-search"></i></button>
+          <button type="button" aria-label="Search"><i class="fa-solid fa-search"></i></button>
         </div>
         <div class="btn-box">
           <button type="button" class="action-btn primary" aria-label="Donate Now">Donate</button>
-          <!-- <button type="button" class="action-btn secondary" aria-label="Sign Up">Sign Up</button> -->
-          <!-- <button type="button" class="action-btn secondary" aria-label="Log In">Log In</button> -->
         </div>
       </div>
       <button type="button" id="menu-btn" class="action-btn" aria-label="Menu">
@@ -38,24 +36,24 @@
       </button>
     </nav>
   </header>
-  
+
   <main>
     <section class="hero">
       <h1>Support Animals in Need</h1>
       <p>
         Join us in making a difference for animals in need. Click the button below to help us provide shelter, food, and medical care to our furry friends.
       </p>
-      <button class="donate-btn" aria-label="Donate Now">Donate Now</button>
+      <button type="button" class="donate-btn" aria-label="Donate Now" onclick="openModal('donation-modal')">Donate Now</button>
     </section>
     
-    <section class="about">
+    <section id="about" class="about">
       <h2>About Us</h2>
       <p>
         Animal Donations is a non-profit organization committed to providing food, shelter, and medical care to abandoned and abused animals. Our goal is to give them a second chance and connect them with loving homes.
       </p>
     </section>
     
-    <section class="services">
+    <section id="services" class="services">
       <h2>Our Services</h2>
       <div class="service">
         <i class="fa-solid fa-paw"></i>
@@ -74,13 +72,13 @@
       </div>
     </section>
     
-    <section class="donations">
+    <section id="donations" class="donations">
       <h2>Make a Donation</h2>
       <p>Your generous contributions help us save lives and support animals in need. Every donation counts.</p>
-      <button class="donate-btn" aria-label="Donate Now">Donate Now</button>
+      <button type="button" class="donate-btn" aria-label="Donate Now" onclick="openModal('donation-modal')">Donate Now</button>
     </section>
     
-    <section class="events">
+    <section id="events" class="events">
       <h2>Upcoming Events</h2>
       <div class="event">
         <img src="./assets/images/event1.png" alt="Adoption Event">
@@ -99,11 +97,67 @@
       </div>
     </section>
   </main>
-  
+
   <footer>
     <p>&copy; 2024 Animal Donations. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    <div class="social-media">
+      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
   </footer>
-  
+
+  <!-- Donation Modal -->
+  <div id="donation-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Make a Donation</h2>
+        <span class="close" onclick="closeModal('donation-modal')">&times;</span>
+      </div>
+      <form id="donation-form">
+        <div id="step1">
+          <h3>Step 1: Basic Details</h3>
+          <input type="text" placeholder="Name" required>
+          <input type="text" placeholder="Surname" required>
+          <button type="button" onclick="nextStep('step1', 'step2')">Next</button>
+        </div>
+        <div id="step2" style="display: none;">
+          <h3>Step 2: Card Details</h3>
+          <input type="text" placeholder="Card Number" required>
+          <input type="text" placeholder="Expiration Date" required>
+          <input type="text" placeholder="CVV" required>
+          <button type="button" onclick="nextStep('step2', 'step3')">Next</button>
+        </div>
+        <div id="step3" style="display: none;">
+          <h3>Step 3: Donation Amount</h3>
+          <input type="number" placeholder="Amount" required>
+          <button type="submit">Donate</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Volunteer Modal -->
+  <div id="volunteer-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Volunteer Sign Up</h2>
+        <span class="close" onclick="closeModal('volunteer-modal')">&times;</span>
+      </div>
+      <form>
+        <input type="text" placeholder="Name" required>
+        <input type="text" placeholder="Surname" required>
+        <input type="text" placeholder="Contact Number" required>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button type="button" id="back-to-top" class="action-btn" onclick="scrollToTop()" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
   <script src="script.js"></script>
 </body>
 </html>
